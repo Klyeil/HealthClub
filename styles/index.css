@@ -64,7 +64,7 @@
     position: relative;
     display: inline-block;
 }
-.subTitle.center { display: block; text-align: center; margin-bottom: 10px; }
+.subTitle.center { display: block; text-align: center; margin-bottom: 10px; padding-top: 80px; border-top : 1px solid #ddd;}
 
 .subDesc.center {
     text-align: center;

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>운동 기구 - Health</title>
+    <link rel="stylesheet" href="../styles/common.css">
+    <link rel="stylesheet" href="../styles/equipmentPage.css">
+</head>
+<body>
+<div id="navPlaceholder"></div>
+
+<main class="mainContainer">
+    <h2 class="pageTitle">운동 기구 가이드</h2>
+    <p class="pageDesc">최고급 머신과 함께 체계적인 운동을 시작해보세요.</p>
+
+    <div class="equipmentTab">
+        <button class="tabBtn active" onclick="showEquipment('smith')">스미스 머신</button>
+        <button class="tabBtn" onclick="showEquipment('latpull')">랫 풀 다운</button>
+        <button class="tabBtn" onclick="showEquipment('legpress')">레그 프레스</button>
+    </div>
+
+    <div id="smith" class="equipmentContent active">
+        <div class="contentHeader">
+            <h3 class="equipName">스미스 머신 <span class="engName">Smith Machine</span></h3>
+        </div>
+
+        <div class="splitLayout">
+            <div class="leftPanel">
+                <div class="videoFrame">
+                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/YwIllA0Aqtg?si=uHI5nts7xwNLeFqv" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+
+                <div class="guideBox">
+                    <h4>사용 방법</h4>
+                    <ol>
+                        <li>바벨의 높이를 어깨 높이보다 약간 낮게 설정합니다.</li>
+                        <li>바벨 아래 누워 어깨 너비보다 넓게 바를 잡습니다.</li>
+                        <li>바를 들어 올린 뒤 천천히 가슴 중앙 쪽으로 내립니다.</li>
+                        <li>가슴 근육을 수축하며 바를 다시 밀어 올립니다.</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="rightPanel">
+                <h4>🔥 운동 효과</h4>
+                <div class="muscleImg">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6c/Pectoralis_major.png?20050725131119" alt="Pectoralis Major">
+                    <div class="targetPoint p1"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="latpull" class="equipmentContent">
+        <div class="contentHeader">
+            <h3 class="equipName">랫 풀 다운 <span class="engName">Lat Pull Down</span></h3>
+        </div>
+
+        <div class="splitLayout">
+            <div class="leftPanel">
+                <div class="videoFrame">
+                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/CAwf7n6Luuc" title="Lat Pull Down Guide" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+
+                <div class="guideBox">
+                    <h4>사용 방법</h4>
+                    <ol>
+                        <li>패드에 무릎을 고정하고 바를 어깨 너비보다 넓게 잡습니다.</li>
+                        <li>가슴을 펴고 바를 쇄골 쪽으로 당겨줍니다.</li>
+                        <li>광배근의 수축을 느끼며 팔꿈치를 옆구리로 붙입니다.</li>
+                        <li>천천히 저항을 버티며 팔을 펴줍니다.</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="rightPanel">
+                <h4>🔥 운동 효과</h4>
+                <div class="muscleImg">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Latissimus_dorsi.png/640px-Latissimus_dorsi.png" alt="Latissimus Dorsi">
+                    <div class="targetPoint p2"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="legpress" class="equipmentContent">
+        <div class="contentHeader">
+            <h3 class="equipName">레그 프레스 <span class="engName">Leg Press</span></h3>
+        </div>
+
+        <div class="splitLayout">
+            <div class="leftPanel">
+                <div class="videoFrame">
+                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/IZxyjW7MPJQ" title="Leg Press Guide" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+
+                <div class="guideBox">
+                    <h4>사용 방법</h4>
+                    <ol>
+                        <li>등받이에 엉덩이와 등을 밀착시킵니다.</li>
+                        <li>발판에 발을 어깨 너비로 벌리고 위치시킵니다.</li>
+                        <li>안전바를 풀고 무릎이 90도가 될 때까지 천천히 내립니다.</li>
+                        <li>발뒤꿈치로 민다는 느낌으로 발판을 밀어냅니다.</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="rightPanel">
+                <h4>🔥 운동 효과</h4>
+                <div class="muscleImg">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Quadriceps_he.png/640px-Quadriceps_he.png" alt="Quadriceps">
+                    <div class="targetPoint p3"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</main>
+<script>
+    function showEquipment(id) {
+        const contents = document.querySelectorAll('.equipmentContent');
+        contents.forEach(content => {
+            content.classList.remove('active');
+        });
+
+        const target = document.getElementById(id);
+        if (target) {
+            target.classList.add('active');
+        }
+
+        const buttons = document.querySelectorAll('.tabBtn');
+        buttons.forEach(btn => {
+            btn.classList.remove('active');
+
+            const onclickAttr = btn.getAttribute('onclick');
+            if (onclickAttr && onclickAttr.includes(`'${id}'`)) {
+                btn.classList.add('active');
+            }
+        });
+    }
+</script>
+<script src="../scripts/user.js"></script>
+<script src="../scripts/common.js"></script>
+</body>
+</html>
