@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>마이페이지 - Health</title>
+    <link href="https://fonts.cdnfonts.com/css/dark-line" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/common.css">
+    <link rel="stylesheet" href="../styles/myPage.css">
+</head>
+<body>
+<div id="navPlaceholder"></div>
+
+<main class="mainContainer">
+    <h2 class="pageTitle">마이페이지</h2>
+
+    <section class="dashboardBox">
+        <div class="leftColumn">
+            <div class="userInfoArea">
+                <h3 id="profileName" class="userName">로딩중...</h3>
+                <p id="profileId" class="userId">@userid</p>
+
+                <div class="userMetaInfo">
+                    <div class="metaItem">
+                        <span class="label">전화번호</span>
+                        <span class="value" id="profilePhone">-</span>
+                    </div>
+                    <div class="metaItem">
+                        <span class="label">가입일</span>
+                        <span class="value" id="profileJoinDate">-</span>
+                    </div>
+                </div>
+            </div>
+
+            <button id="myPageLogoutBtn" class="logoutBtn">로그아웃</button>
+        </div>
+
+        <div class="columnDivider"></div>
+
+        <div class="rightColumn">
+            <h4 class="columnTitle">이용권 현황</h4>
+
+            <div id="membershipContent" style="display: none;">
+                <div class="membershipCardInner">
+                    <div class="planHeader">
+                        <span class="planName" id="planName">이용권 이름</span>
+                        <span class="dDayBadge" id="dDayBadge">D-Day</span>
+                    </div>
+                    <p class="planPeriod" id="planPeriod">2024.01.01 ~ 2024.12.31</p>
+
+                    <div class="planDetails">
+                        <span>결제 금액 <strong id="planPrice">0원</strong></span>
+                        <span class="separator">|</span>
+                        <span>결제 수단 <strong id="planMethod">-</strong></span>
+                    </div>
+
+                </div>
+            </div>
+
+            <div id="noMembershipContent" class="emptyState" style="display: none;">
+                <p>현재 이용 중인 멤버십이 없습니다.</p>
+                <a href="regHealthPage.html" class="buyBtn">멤버십 등록하기 &gt;</a>
+            </div>
+        </div>
+    </section>
+    <section class="dashboardBox lockerSection">
+        <div class="lockerHeader">
+            <h3 class="boxTitle">개인 사물함</h3>
+            <span class="statusBadge" id="lockerStatusBadge" style="display:none;">사용중</span>
+        </div>
+
+        <div id="lockerContent" class="lockerContent" style="display: none;">
+            <div class="lockerInfoRow">
+                <span class="lockerNumber" id="lockerNumber">No. 000</span>
+                <div class="passBox">
+                    <span class="passLabel">비밀번호</span>
+                    <strong class="passValue" id="lockerPassword">0000</strong>
+                </div>
+            </div>
+
+        </div>
+
+        <div id="noLockerContent" class="emptyState" style="display: none;">
+            <p>사용 중인 사물함이 없습니다.</p>
+            <button class="registerLockerBtn" onclick="location.href='regLocker.html'">사물함을 등록하세요</button>
+        </div>
+    </section>
+</main>
+
+<script src="../scripts/user.js"></script>
+<script src="../scripts/common.js"></script>
+</body>
+</html>

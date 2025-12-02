@@ -1,0 +1,127 @@
+body {
+    background-color: #f5f6f7;
+}
+
+.mainContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: calc(100vh - 80px);
+    padding: 40px 20px;
+}
+
+
+.pageTitle {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    color: #333;
+    text-align: center;
+}
+
+
+.loginCard {
+    width: 100%;
+    max-width: 480px;
+    background-color: #ffffff;
+    padding: 50px 40px;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+}
+
+.inputGroup {
+    margin-bottom: 25px;
+}
+
+.inputGroup input {
+    width: 100%;
+    padding: 15px 5px;
+    border: none;
+    border-bottom: 1px solid #ddd;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.2s;
+    background-color: transparent;
+}
+
+.inputGroup input::placeholder {
+    color: #aaa;
+}
+
+.inputGroup input:focus {
+    border-bottom-color: #2ecc71;
+}
+
+.optionsRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+    font-size: 14px;
+    color: #666;
+}
+
+.keepLogin {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.keepLogin input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: #2ecc71; /* 체크박스 색상 */
+    cursor: pointer;
+}
+
+.findLinks a {
+    color: #666;
+    text-decoration: none;
+}
+.findLinks a:hover {
+    text-decoration: underline;
+}
+
+#loginBtn {
+    width: 100%;
+    padding: 16px;
+    background-color: #2ecc71;
+    color: white;
+    font-size: 18px;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+#loginBtn:hover {
+    background-color: #27ae60;
+}
+
+
+.signupArea {
+    margin-top: 30px;
+    padding-top: 30px;
+    border-top: 1px solid #eee;
+}
+
+#signupBtn {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    color: #333;
+    font-size: 16px;
+    font-weight: 500;
+    text-align: center;
+    text-decoration: none;
+    transition: all 0.2s;
+}
+
+#signupBtn:hover {
+    background-color: #f9f9f9;
+    border-color: #ccc;
+}

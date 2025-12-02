@@ -5,11 +5,133 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Health Club</title>
     <link rel="stylesheet" href="../styles/common.css">
+    <link rel="stylesheet" href="../styles/index.css">
 </head>
 <body>
     <div id="navPlaceholder"></div>
+    <main>
+        <section class="hero">
+            <div class="heroOverlay">
+                <div class="heroContent">
+                    <h1>SANGMYUNG<br>HEALTH CLUB</h1>
+                    <p>최고의 시설과 전문 트레이너가 함께하는<br>당신의 건강한 라이프스타일을 시작하세요.</p>
+                    <a href="../pages/regHealthPage.html" class="heroBtn">헬스 등록하기</a>
+                </div>
+            </div>
+        </section>
+        <section class="sectionContainer infoSection">
+            <div class="contentWrapper splitLayout">
+                <div class="mapArea">
+                    <h2 class="subTitle">오시는 길</h2>
+                    <div class="mapFrame">
+                        <iframe
+                                src="https://maps.google.com/maps?q=36.8313071956562,127.180992915316&hl=ko&z=16&output=embed"
+                                width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+
+                <div class="infoTextArea">
+                    <div class="infoBox">
+                        <h3>운영 시간</h3>
+                        <ul>
+                            <li><strong>평일 (월-금):</strong> 06:00 ~ 23:00</li>
+                            <li><strong>토요일:</strong> 09:00 ~ 18:00</li>
+                            <li class="holidayNote">* 법정 공휴일 및 휴관일 제외</li>
+                        </ul>
+                    </div>
+                    <div class="contactWrapper">
+                        <h3> 연락처</h3>
+
+                        <div class="contactInner">
+                            <div class="contactLeft">
+                                <p class="contactName">K동 헬스장 담당자</p>
+                                <p class="contactEmail">health@sangmyung.ac.kr</p>
+                            </div>
+
+                            <div class="contactRight">
+                                <p class="contactNumber">02-2287-0000</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="sectionContainer holidaySection">
+            <div class="contentWrapper splitLayout reverseOnMobile">
+                <div class="holidayInfo">
+                    <h2 class="subTitle">이달의 휴무일</h2>
+                    <p class="desc">쾌적한 환경 유지를 위해<br>정기적으로 휴관을 진행하고 있습니다.</p>
+                </div>
+
+                <div class="calendarArea">
+                    <div class="calendarHeader">
+                        <span id="currentMonth">2024. 05</span>
+                    </div>
+                    <div class="calendarGrid" id="calendarGrid">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="sectionContainer trainerSection">
+            <div class="contentWrapper">
+                <h2 class="subTitle center">트레이너 소개</h2>
+                <p class="subDesc center">전문적인 지식과 경험을 갖춘 최고의 강사진입니다.</p>
+
+                <div class="trainerList">
+                    <div class="trainerItem">
+                        <div class="trainerImg">
+                            <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?q=80&w=1740&auto=format&fit=crop" alt="김상명 팀장">
+                        </div>
+
+                        <div class="trainerInfo">
+                            <h3>최영우 <span class="position">팀장</span></h3>
+                            <ul class="careerList">
+                                <li>생활스포츠지도사 2급 (보디빌딩)</li>
+                                <li>NASM-CPT (미국스포츠의학회 공인 퍼스널트레이너)</li>
+                                <li>CES (교정운동전문가) 자격 보유</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <hr class="divider"> <div class="trainerItem">
+                    <div class="trainerImg">
+                        <img src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?q=80&w=1740&auto=format&fit=crop" alt="이헬스 시니어">
+                    </div>
+
+                    <div class="trainerInfo">
+                        <h3>최정원 <span class="position">시니어</span></h3>
+                        <ul class="careerList">
+                            <li>스포츠재활 전문과정 수료</li>
+                            <li>FMS (기능적 움직임 검사) Lv.1, 2</li>
+                            <li>재활 트레이닝 전문가 (RTS) Lv.1</li>
+                        </ul>
+                    </div>
+                </div>
+
+                    <hr class="divider"> <div class="trainerItem">
+                    <div class="trainerImg">
+                        <img src="https://images.unsplash.com/photo-1611672585731-fa10603fb9e0?q=80&w=1587&auto=format&fit=crop" alt="박운동 트레이너">
+                    </div>
+
+                    <div class="trainerInfo">
+                        <h3>김민기 <span class="position">트레이너</span></h3>
+                        <ul class="careerList">
+                            <li>바디프로필 전문 트레이닝</li>
+                            <li>다이어트 / 근력증가 전문</li>
+                            <li>식단 관리 및 멘탈 코칭</li>
+                        </ul>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="../scripts/user.js"></script>
     <script src="../scripts/common.js"></script>
+    <script src="../scripts/index.js"></script>
 </body>
 </html>

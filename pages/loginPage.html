@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로그인 - Health</title>
+    <link rel="stylesheet" href="../styles/common.css">
+    <link rel="stylesheet" href="../styles/loginPage.css">
+</head>
+<body>
+<div id="navPlaceholder"></div>
+
+<main class="mainContainer">
+    <h2 class="pageTitle">로그인</h2>
+
+    <div class="loginCard">
+        <form id="loginForm">
+            <div class="inputGroup">
+                <input type="text" id="userId" placeholder="아이디를 입력하세요" required>
+            </div>
+
+            <div class="inputGroup">
+                <input type="password" id="userPassword" placeholder="비밀번호를 입력하세요" required>
+            </div>
+
+            <div class="optionsRow">
+                <label class="keepLogin">
+                    <input type="checkbox" id="keepLoginCheck">
+                    <span>로그인 상태 유지</span>
+                </label>
+                <div class="findLinks">
+                    <a href="#">아이디/비밀번호 찾기</a>
+                </div>
+            </div>
+
+            <button type="submit" id="loginBtn">로그인</button>
+        </form>
+
+        <div class="signupArea">
+            <a href="../pages/signUpPage.html" id="signupBtn">회원가입</a>
+        </div>
+    </div>
+</main>
+
+<script src="../scripts/user.js"></script>
+<script src="../scripts/common.js"></script>
+</body>
+</html>

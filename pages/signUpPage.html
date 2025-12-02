@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입 - Health</title>
+    <link rel="stylesheet" href="../styles/common.css">
+    <link rel="stylesheet" href="../styles/signUpPage.css">
+</head>
+<body>
+<div id="navPlaceholder"></div>
+
+<main class="mainContainer">
+    <h2 class="pageTitle">회원가입</h2>
+
+    <div class="signupCard">
+        <form id="signupForm">
+            <div class="inputGroup">
+                <label for="userId">아이디</label>
+                <input type="text" id="userId" placeholder="사용할 아이디를 입력하세요" required>
+            </div>
+
+            <div class="inputGroup">
+                <label for="userPassword">비밀번호</label>
+                <input type="password" id="userPassword" placeholder="비밀번호를 입력하세요" required>
+            </div>
+
+            <div class="inputGroup">
+                <label for="userName">이름</label>
+                <input type="text" id="userName" placeholder="성함을 입력하세요" required>
+            </div>
+
+            <div class="inputGroup">
+                <label for="userPhone">전화번호</label>
+                <input type="tel" id="userPhone" placeholder="010-0000-0000">
+            </div>
+
+            <button type="submit" id="signupBtn">가입하기</button>
+        </form>
+
+        <div class="loginLinkArea">
+            <span>이미 계정이 있으신가요?</span>
+            <a href="loginPage.html">로그인하기</a>
+        </div>
+    </div>
+</main>
+
+<script src="../scripts/userData.js"></script>
+<script src="../scripts/user.js"></script>
+<script src="../scripts/common.js"></script>
+</body>
+</html>

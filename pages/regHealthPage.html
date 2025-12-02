@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>헬스장 등록 - Health</title>
+    <link rel="stylesheet" href="../styles/common.css">
+    <link rel="stylesheet" href="../styles/regHealthPage.css">
+</head>
+<body>
+<div id="navPlaceholder"></div>
+
+<main class="mainContainer">
+    <section class="leftSection">
+        <div class="combinedBox">
+            <h2 class="sectionTitle">주문 상품</h2>
+            <div class="productHeader">
+                <div class="productIcon">💪</div>
+                <div class="productInfo">
+                    <h3>Health 멤버십 구독권</h3>
+                    <p>상명대학교 천안캠퍼스 스포츠센터</p>
+                </div>
+            </div>
+
+            <div class="contentDivider"></div>
+
+            <div class="featureSection">
+                <div class="featureGroup">
+                    <h4>️ 결재 혜택</h4>
+                    <ul>
+                        <li>운동복 / 수건 무료 대여</li>
+                        <li>개인 락커 1개월 무료</li>
+                        <li>PT 2회 제공</li>
+                    </ul>
+                </div>
+                <div class="featureGroup">
+                    <h4> 추가 혜택</h4>
+                    <ul>
+                        <li><strong>3개월</strong> 이상 등록 시 추가 할인</li>
+                        <li>쿠폰 적용 시 <strong>20%</strong> 특별 할인</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="contentDivider"></div>
+
+            <div class="couponSection">
+                <h4>사용 가능 쿠폰</h4>
+                <div class="couponBox">
+                    <div class="couponInfo">
+                        <span class="couponName">신규 회원 20% 할인 쿠폰</span>
+                        <span class="couponCode">CODE: LOVEHEALTH</span>
+                    </div>
+                    <button type="button" class="copyBtn" onclick="navigator.clipboard.writeText('LOVEHEALTH')">코드 복사</button>
+                </div>
+                <p class="notice">* 오른쪽 결제 상세 창에 코드를 입력하고 적용해 주세요.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="rightSection stickyBox">
+        <h2 class="sectionTitle">결제 상세</h2>
+
+        <div class="formGroup">
+            <label for="monthSelect">이용 기간 선택</label>
+            <select id="monthSelect" class="formSelect">
+                <option value="0">기간을 선택해주세요</option>
+                <option value="1">1개월</option>
+                <option value="2">2개월</option>
+                <option value="3">3개월</option>
+                <option value="4">4개월</option>
+                <option value="5">5개월</option>
+                <option value="6">6개월</option>
+                <option value="7">7개월</option>
+                <option value="8">8개월</option>
+                <option value="9">9개월</option>
+                <option value="10">10개월</option>
+                <option value="11">11개월</option>
+                <option value="12">12개월</option>
+            </select>
+            <p class="priceInfo">1개월 10,000원 (3개월마다 1,000원 할인)</p>
+        </div>
+
+        <div class="formGroup">
+            <label>결제 수단</label>
+            <div class="radioGroup">
+                <label class="radioLabel">
+                    <input type="radio" name="paymentMethod" value="cash">
+                    <span>현금</span>
+                </label>
+                <label class="radioLabel">
+                    <input type="radio" name="paymentMethod" value="card">
+                    <span>카드</span>
+                </label>
+            </div>
+        </div>
+
+        <div class="formGroup">
+            <label for="couponInput">쿠폰 할인</label>
+            <div class="inputWithBtn">
+                <input type="text" id="couponInput" placeholder="쿠폰 코드를 입력하세요">
+                <button type="button" id="applyCouponBtn">적용</button>
+            </div>
+            <p id="couponMessage" class="message"></p>
+        </div>
+
+        <div class="priceSummary">
+            <div class="priceRow">
+                <span>상품 금액</span>
+                <span id="displayBasePrice">0원</span>
+            </div>
+            <div class="priceRow discount">
+                <span>기간 할인</span>
+                <span id="displayBundleDiscount">-0원</span>
+            </div>
+            <div class="priceRow discount">
+                <span>쿠폰 할인 (20%)</span>
+                <span id="displayCouponDiscount">-0원</span>
+            </div>
+            <div class="divider"></div>
+            <div class="priceRow total">
+                <span>최종 결제 금액</span>
+                <span id="displayTotal">0원</span>
+            </div>
+        </div>
+
+        <button id="paymentBtn" class="paymentBtn">결제하기</button>
+    </section>
+</main>
+
+
+<script src="../scripts/user.js"></script>
+<script src="../scripts/common.js"></script>
+<script src="../scripts/health.js"></script>
+</body>
+</html>
