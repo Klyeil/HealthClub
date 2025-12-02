@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>사물함 등록 - Health</title>
+    <link rel="stylesheet" href="../styles/common.css">
+    <link rel="stylesheet" href="../styles/regLocker.css">
+</head>
+<body>
+<div id="navPlaceholder"></div>
+
+<main class="mainContainer">
+    <section class="leftSection">
+        <h2 class="sectionTitle">사물함 선택</h2>
+        <div class="lockerGrid" id="lockerGrid"></div>
+        <div class="lockerLegend">
+            <div class="legendItem"><span class="box available"></span>사용 가능</div>
+            <div class="legendItem"><span class="box selected"></span>선택됨</div>
+            <div class="legendItem"><span class="box occupied"></span>사용중</div>
+        </div>
+    </section>
+
+    <section class="rightSection stickyBox">
+        <h2 class="sectionTitle">등록 정보</h2>
+
+        <div id="selectionInfo" class="selectionBox">
+            <p class="guideText">좌측에서 원하시는<br>사물함을 선택해주세요.</p>
+        </div>
+
+        <div id="registerForm" style="display: none;">
+            <div class="selectedLockerDisplay">
+                <span class="label">선택한 사물함</span>
+                <strong class="lockerNum" id="selectedLockerNum">No. -</strong>
+            </div>
+
+            <div class="formGroup">
+                <label for="lockerPassword">비밀번호 설정 (4자리)</label>
+                <input type="password" id="lockerPassword" maxlength="4" placeholder="숫자 4자리 입력" oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0, 4);">
+            </div>
+
+            <div class="priceInfo">
+                <span>월 이용료</span>
+                <strong>10,000원</strong>
+            </div>
+
+            <p class="noticeText">* 이용 기간은 멤버십 만료일과 동일하게 설정됩니다.</p>
+
+            <button id="registerBtn" class="registerBtn">등록 및 결제하기</button>
+        </div>
+    </section>
+</main>
+
+<script src="../scripts/user.js"></script>
+<script src="../scripts/regLocker.js"></script>
+<script src="../scripts/common.js"></script>
+</body>
+</html>

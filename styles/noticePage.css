@@ -1,0 +1,147 @@
+.mainContainer {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 60px 20px;
+    min-height: 80vh;
+}
+
+.pageTitle {
+    font-size: 32px;
+    font-weight: 800;
+    color: #111;
+    margin-bottom: 40px;
+}
+
+.noticeBoard {
+    width: 100%;
+    border-top: 1px solid #333;
+    margin-bottom: 40px;
+}
+
+.boardHeader {
+    display: flex;
+    padding: 20px 10px;
+    border-bottom: 1px solid #eee;
+    background-color: #fcfcfc;
+    font-weight: 700;
+    color: #555;
+    font-size: 15px;
+}
+
+.noticeItem {
+    display: flex;
+    padding: 25px 10px;
+    border-bottom: 1px solid #eee;
+    align-items: center;
+    transition: background-color 0.2s;
+    cursor: pointer;
+}
+
+.noticeItem:hover {
+    background-color: #f9f9f9;
+}
+
+.colTitle {
+    flex: 1;
+    font-size: 16px;
+    color: #333;
+    padding-left: 10px;
+}
+
+.noticeItem .colTitle {
+    font-weight: 500;
+}
+
+.noticeTag {
+    color: #2ecc71;
+    font-weight: 700;
+    margin-right: 8px;
+}
+
+.colDate {
+    width: 120px;
+    text-align: center;
+    color: #888;
+    font-size: 14px;
+}
+
+.colViews {
+    width: 80px;
+    text-align: center;
+    color: #888;
+    font-size: 14px;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 40px;
+}
+
+.pageBtn {
+    width: 32px;
+    height: 32px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 15px;
+    color: #888;
+    border-radius: 4px;
+    transition: all 0.2s;
+}
+
+.pageBtn:hover {
+    background-color: #f1f1f1;
+    color: #333;
+}
+
+.pageBtn.active {
+    background-color: #333;
+    color: #fff;
+    font-weight: 700;
+}
+
+.searchArea {
+    display: flex;
+    justify-content: center;
+}
+
+.searchBox {
+    display: flex;
+    gap: 10px;
+}
+
+.searchBox input {
+    width: 300px;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 15px;
+    outline: none;
+}
+
+.searchBox input:focus {
+    border-color: #2ecc71;
+}
+
+.searchBox button {
+    padding: 0 25px;
+    background-color: #2ecc71;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.searchBox button:hover {
+    background-color: #27ae60;
+}
+
+@media (max-width: 768px) {
+    .colDate, .colViews { display: none; }
+    .boardHeader .colDate, .boardHeader .colViews { display: none; }
+    .searchBox input { width: 200px; }
+}

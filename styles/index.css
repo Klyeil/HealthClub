@@ -1,0 +1,348 @@
+.hero {
+    width: 100%;
+    height: 90vh;
+    background-image: url('../images/background.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    margin-top: -80px;
+}
+
+.heroOverlay {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-top: 80px;
+}
+
+.heroContent h1 {
+    font-size: 56px;
+    font-weight: 900;
+    color: #fff;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+}
+
+.heroContent p {
+    font-size: 18px;
+    color: #f1f1f1;
+    margin-bottom: 40px;
+    line-height: 1.6;
+}
+
+.heroBtn {
+    display: inline-block;
+    padding: 16px 40px;
+    background-color: transparent;
+    border : 1px solid #ddd;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 700;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+}
+
+.sectionContainer {
+    padding: 0px 20px 80px 20px;
+}
+
+.contentWrapper {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.subTitle {
+    font-size: 32px;
+    font-weight: 800;
+    color: #333;
+    margin-bottom: 40px;
+    position: relative;
+    display: inline-block;
+}
+.subTitle.center { display: block; text-align: center; margin-bottom: 10px; }
+
+.subDesc.center {
+    text-align: center;
+    color: #666;
+    margin-bottom: 50px;
+}
+
+.splitLayout {
+    display: flex;
+    gap: 50px;
+    align-items: stretch;
+    border-top: 1px solid #ddd;
+    padding-top: 80px;
+    width: 100%;
+}
+
+.mapArea { flex: 6; }
+
+.infoTextArea {
+    flex: 4;
+    display: flex;
+    flex-direction: column;
+    padding-left: 30px;
+}
+
+.mapFrame {
+    width: 100%;
+    height: 450px;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.infoBox {
+    background-color: transparent;
+    padding: 0;
+    border: none;
+    margin-top : 80px;
+    border-radius: 0;
+}
+
+
+.infoBox h3 {
+    font-size: 20px;
+    font-weight: 800;
+    margin-bottom: 20px;
+    color: #222;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.infoBox ul { padding-left: 5px; list-style: none; }
+.infoBox li {
+    margin-bottom: 12px;
+    color: #444;
+    font-size: 16px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px dashed #eee;
+    padding-bottom: 12px;
+}
+.infoBox li:last-child { border-bottom: none; }
+
+.holidayNote {
+    font-size: 13px;
+    color: #888;
+    margin-top: 5px;
+    display: block;
+}
+
+.contactWrapper {
+    margin-top: 10px;
+    padding-top: 30px;
+    border-top: 1px solid #ddd;
+}
+
+.contactWrapper h3 {
+    font-size: 20px;
+    font-weight: 800;
+    color: #222;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.contactInner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.contactLeft {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.contactName {
+    font-size: 16px;
+    font-weight: 700;
+    color: #333;
+}
+
+.contactEmail {
+    font-size: 14px;
+    color: #888;
+}
+
+.contactRight {
+    text-align: right;
+}
+
+.contactNumber {
+    font-size: 28px;
+    font-weight: 600;
+    color: #333;
+    letter-spacing: -0.5px;
+    line-height: 1;
+}
+
+
+
+.holidayInfo { flex: 4; display: flex; flex-direction: column;}
+.holidayInfo .desc { font-size: 16px; color: #666; margin-bottom: 30px; line-height: 1.6; }
+
+
+.notice { font-size: 13px; color: #999; }
+
+.calendarArea {
+    flex: 6;
+    background: #fff;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.calendarHeader {
+    text-align: center;
+    font-size: 22px;
+    font-weight: 800;
+    margin-bottom: 25px;
+    color: #222;
+    letter-spacing: 1px;
+}
+
+.calendarGrid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    row-gap: 12px;
+    column-gap: 0;
+    text-align: center;
+}
+
+.calDay {
+    height: 40px;
+    line-height: 40px;
+    border-radius: 50%;
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+    cursor: default;
+    margin: 0 auto;
+    width: 40px;
+}
+
+
+.calDay.header {
+    color: #999;
+    font-size: 13px;
+    font-weight: 400;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 0;
+}
+
+.calDay.today {
+    background-color: #e3f9e5;
+    font-weight: 700;
+}
+
+.calDay.sun, .calDay.holiday {
+    color: #e74c3c;
+    background-color: #ffeaea;
+}
+
+.calDay.sat {
+    color: #3498db;
+}
+
+.calDay.disabled {
+    pointer-events: none;
+}
+
+.trainerSection {
+    background-color: #fff;
+    padding-bottom: 100px;
+}
+
+.trainerList {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    max-width: 950px;
+    margin: 0 auto;
+}
+
+.trainerItem {
+    display: flex;
+    align-items: center;
+    padding: 30px 0;
+}
+
+.trainerImg {
+    width: 200px;
+    height: 250px;
+    flex-shrink: 0;
+    margin-right: 40px;
+    overflow: hidden;
+    background-color: #eee;
+}
+
+.trainerImg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+}
+
+.trainerInfo {
+    flex: 1;
+}
+
+.trainerInfo h3 {
+    font-size: 24px;
+    font-weight: 800;
+    margin-bottom: 15px;
+    color: #222;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.position {
+    font-size: 13px;
+    background: #333;
+    color: #fff;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-weight: 500;
+}
+
+.careerList {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+.careerList li {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 6px;
+    position: relative;
+    padding-left: 12px;
+}
+
+.careerList li::before {
+    content: "•";
+    color: #ccc;
+    position: absolute;
+    left: 0;
+}
+
+
+.divider {
+    border: 0;
+    height: 1px;
+    background-color: #eee;
+    margin: 0;
+}
