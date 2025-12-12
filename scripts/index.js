@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     renderCalendar();
+    initPopup();
 });
 
 function renderCalendar() {
@@ -60,4 +61,30 @@ function renderCalendar() {
 
         calendarGrid.appendChild(div);
     }
+}
+
+function initPopup() {
+    const popup = document.getElementById('promoPopup');
+    const closeBtn = document.getElementById('closePopupBtn');
+    const dontShowBtn = document.getElementById('dontShowTodayBtn');
+
+    if (!popup || !closeBtn || !dontShowBtn) return;
+
+    const today = new Date().toISOString().split('T')[0];
+    const hiddenDate = localStorage.getItem('hidePromoPopupDate');
+
+    if (hiddenDate !== today) {
+        popup.style.display = 'flex';
+    } else {
+        popup.style.display = 'none';
+    }
+
+    closeBtn.addEventListener('click', () => {
+        popup.style.display = 'none';
+    });
+
+    dontShowBtn.addEventListener('click', () => {
+        localStorage.setItem('hidePromoPopupDate', today);
+        popup.style.display = 'none';
+    });
 }

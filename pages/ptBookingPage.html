@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PT 예약 - Health</title>
+    <link href="https://fonts.cdnfonts.com/css/dark-line" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/common.css">
+    <link rel="stylesheet" href="../styles/ptBookingPage.css">
+</head>
+<body>
+<div id="navPlaceholder"></div>
+
+<main class="mainContainer">
+    <h2 class="pageTitle">PT 수업 예약</h2>
+
+    <div class="bookingLayout">
+        <section class="selectionArea">
+
+            <div class="stepBox">
+                <h3 class="stepTitle"><span class="stepNum">01</span> 트레이너 선택</h3>
+                <div class="trainerList" id="trainerList"></div>
+            </div>
+
+            <div class="stepBox">
+                <h3 class="stepTitle"><span class="stepNum">02</span> 날짜 선택</h3>
+                <div class="dateInputWrapper">
+                    <input type="text" id="dateTrigger" placeholder="터치하여 날짜 선택" readonly>
+                    <div id="calendarPopup" class="calendarPopup">
+                        <div class="calNav">
+                            <button type="button" id="prevMonthBtn">&lt;</button>
+                            <span id="currentMonthYear"></span>
+                            <button type="button" id="nextMonthBtn">&gt;</button>
+                        </div>
+                        <div class="calGridHeader">
+                            <span>일</span><span>월</span><span>화</span><span>수</span><span>목</span><span>금</span><span>토</span>
+                        </div>
+                        <div id="bookingCalGrid" class="calGridBody"></div>
+                        <button type="button" id="dateConfirmBtn" class="calConfirmBtn">선택 완료</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="stepBox">
+                <h3 class="stepTitle"><span class="stepNum">03</span> 시간 선택</h3>
+                <div class="timeGrid" id="timeGrid"></div>
+                <p class="timeNote">* 이미 예약된 시간은 선택할 수 없습니다.</p>
+            </div>
+
+        </section>
+
+        <section class="summaryArea stickyBox">
+            <div class="summaryCard">
+                <h3 class="summaryTitle">예약 정보 확인</h3>
+
+                <div class="summaryItem">
+                    <span class="label">트레이너</span>
+                    <strong class="value" id="displayTrainer">선택해주세요</strong>
+                </div>
+                <div class="summaryItem">
+                    <span class="label">날짜</span>
+                    <strong class="value" id="displayDate">선택해주세요</strong>
+                </div>
+                <div class="summaryItem">
+                    <span class="label">시간</span>
+                    <strong class="value" id="displayTime">선택해주세요</strong>
+                </div>
+
+                <div class="divider"></div>
+
+                <div class="summaryItem total">
+                    <span class="label">차감 횟수</span>
+                    <strong class="value">1회</strong>
+                </div>
+
+                <button id="submitBtn" class="submitBtn" disabled>예약 확정하기</button>
+            </div>
+        </section>
+    </div>
+</main>
+
+<script src="../scripts/user.js"></script>
+<script src="../scripts/ptBooking.js"></script>
+<script src="../scripts/common.js"></script>
+</body>
+</html>

@@ -50,6 +50,28 @@ function formatDate(dateObj) {
 
 document.addEventListener('DOMContentLoaded', () => {
     initUserList();
+    const userPhoneInput = document.getElementById('userPhone');
+    if (userPhoneInput) {
+        userPhoneInput.addEventListener('input', (e) => {
+            let val = e.target.value.replace(/[^0-9]/g, '');
+
+            if (val.length > 11) {
+                val = val.substring(0, 11);
+            }
+
+            let result = '';
+            if (val.length < 4) {
+                result = val;
+            } else if (val.length < 8) {
+                result = val.substr(0, 3) + '-' + val.substr(3);
+            } else {
+                result = val.substr(0, 3) + '-' + val.substr(3, 4) + '-' + val.substr(7);
+            }
+
+            e.target.value = result;
+        });
+    }
+
 
     const signupForm = document.getElementById('signupForm');
     const loginForm = document.getElementById('loginForm');
@@ -90,6 +112,8 @@ document.addEventListener('DOMContentLoaded', () => {
             e.preventDefault();
             const userIdInput = document.getElementById('userId').value;
             const userPasswordInput = document.getElementById('userPassword').value;
+            // const expiryTime = 12 * 60 * 60 * 1000;
+            // const nowTime = new Date().getDate();
 
             const userList = JSON.parse(localStorage.getItem('userList')) || [];
             const user = userList.find(u => u.id === userIdInput && u.password === userPasswordInput);
@@ -151,13 +175,13 @@ document.addEventListener('DOMContentLoaded', () => {
             if (dDayBadge) {
                 if (diffDays > 0) {
                     dDayBadge.innerText = `D-${diffDays}`;
-                    dDayBadge.style.backgroundColor = "#2ecc71"; // 초록색
+                    dDayBadge.style.backgroundColor = "#2ecc71";
                 } else if (diffDays === 0) {
                     dDayBadge.innerText = "Today";
                     dDayBadge.style.backgroundColor = "#2ecc71";
                 } else {
                     dDayBadge.innerText = "만료됨";
-                    dDayBadge.style.backgroundColor = "#e74c3c"; // 빨간색
+                    dDayBadge.style.backgroundColor = "#e74c3c";
                 }
             }
         } else {
@@ -165,32 +189,79 @@ document.addEventListener('DOMContentLoaded', () => {
             if(noMembershipContent) noMembershipContent.style.display = 'block';
         }
 
+        if (document.getElementById('ptCountDisplay')) {
+            const count = myData.ptCount || 0;
+            document.getElementById('ptCountDisplay').innerText = `${count}회`;
+        }
+
         const lockerContent = document.getElementById('lockerContent');
+        const lockerVoucherContent = document.getElementById('lockerVoucherContent');
         const noLockerContent = document.getElementById('noLockerContent');
         const lockerStatusBadge = document.getElementById('lockerStatusBadge');
 
-        if (myData.locker && myData.locker !== -1) {
-            if(lockerContent) lockerContent.style.display = 'block';
-            if(noLockerContent) noLockerContent.style.display = 'none';
-            if(lockerStatusBadge) lockerStatusBadge.style.display = 'inline-block';
+        if(lockerContent) lockerContent.style.display = 'none';
+        if(lockerVoucherContent) lockerVoucherContent.style.display = 'none';
+        if(noLockerContent) noLockerContent.style.display = 'none';
+        if(lockerStatusBadge) lockerStatusBadge.style.display = 'none';
 
-            if(document.getElementById('lockerNumber')) {
-                document.getElementById('lockerNumber').innerText = `No. ${myData.locker.number}`;
-            }
+        if (myData.locker) {
+            if (myData.locker.number) {
+                if(lockerContent) lockerContent.style.display = 'block';
+                if(lockerStatusBadge) {
+                    lockerStatusBadge.style.display = 'inline-block';
+                    lockerStatusBadge.innerText = '사용중';
+                }
 
-            if(document.getElementById('lockerPassword')) {
-                document.getElementById('lockerPassword').innerText = myData.locker.password || "****";
-            }
+                if(document.getElementById('lockerNumber')) document.getElementById('lockerNumber').innerText = `No. ${myData.locker.number}`;
+                if(document.getElementById('lockerPassword')) document.getElementById('lockerPassword').innerText = myData.locker.password || "****";
 
-            if(document.getElementById('lockerPeriod')) {
-                const lStart = new Date(myData.locker.startDate);
-                const lEnd = new Date(myData.locker.endDate);
-                document.getElementById('lockerPeriod').innerText = `${formatDate(lStart)} ~ ${formatDate(lEnd)}`;
+                if(document.getElementById('lockerPeriod')) {
+                    const lStart = new Date(myData.locker.startDate);
+                    const lEnd = new Date(myData.locker.endDate);
+                    document.getElementById('lockerPeriod').innerText = `${formatDate(lStart)} ~ ${formatDate(lEnd)}`;
+                }
             }
-        } else {
-            if(lockerContent) lockerContent.style.display = 'none';
+            else {
+                if(lockerVoucherContent) lockerVoucherContent.style.display = 'block';
+                if(lockerStatusBadge) {
+                    lockerStatusBadge.style.display = 'inline-block';
+                    lockerStatusBadge.innerText = '미등록';
+                    lockerStatusBadge.style.backgroundColor = '#f1c40f';
+                    lockerStatusBadge.style.color = '#fff';
+                }
+            }
+        }
+        else {
             if(noLockerContent) noLockerContent.style.display = 'block';
-            if(lockerStatusBadge) lockerStatusBadge.style.display = 'none';
+        }
+
+        const ptReservationList = document.getElementById('ptReservationList');
+        const noPtReservation = document.getElementById('noPtReservation');
+
+        if (ptReservationList && noPtReservation) {
+            if (myData.reservations && myData.reservations.length > 0) {
+                noPtReservation.style.display = 'none';
+                ptReservationList.innerHTML = '';
+
+                const sortedList = myData.reservations.sort((a, b) => new Date(b.date) - new Date(a.date));
+
+                sortedList.forEach(res => {
+                    const div = document.createElement('div');
+                    div.className = 'ptItem';
+                    div.innerHTML = `
+                        <div class="ptInfoLeft">
+                            <span class="ptDate">${res.date}</span>
+                            <span class="ptTime">${res.time}</span>
+                            <span class="ptTrainer">트레이너: ${res.trainer}</span>
+                        </div>
+                        <span class="ptStatus">예약확정</span>
+                    `;
+                    ptReservationList.appendChild(div);
+                });
+            } else {
+                ptReservationList.innerHTML = '';
+                noPtReservation.style.display = 'block';
+            }
         }
     }
 

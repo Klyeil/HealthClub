@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>계정 찾기 - Health</title>
+    <link href="https://fonts.cdnfonts.com/css/dark-line" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/common.css">
+    <link rel="stylesheet" href="../styles/findAccountPage.css">
+</head>
+<body>
+<div id="navPlaceholder"></div>
+
+<main class="mainContainer authContainer">
+    <div class="authBox">
+        <h2 class="pageTitle">계정 찾기</h2>
+
+        <div class="tabMenu">
+            <button type="button" class="tabBtn active" onclick="switchTab('findId')">아이디 찾기</button>
+            <button type="button" class="tabBtn" onclick="switchTab('findPw')">비밀번호 찾기</button>
+        </div>
+
+        <div id="findIdForm" class="authForm active">
+            <p class="guideText">회원가입 시 등록한 정보로<br>아이디를 찾을 수 있습니다.</p>
+
+            <div class="inputGroup">
+                <label for="id_name">이름</label>
+                <input type="text" id="id_name" placeholder="이름을 입력하세요">
+            </div>
+            <div class="inputGroup">
+                <label for="id_phone">전화번호</label>
+                <input type="text" id="id_phone" placeholder="010-0000-0000">
+            </div>
+
+            <button type="button" id="btnFindId" class="submitBtn">아이디 찾기</button>
+        </div>
+
+        <div id="findPwForm" class="authForm">
+            <p class="guideText">가입 정보와 새로운 비밀번호를<br>입력해주세요.</p>
+
+            <div class="inputGroup">
+                <label for="pw_id">아이디</label>
+                <input type="text" id="pw_id" placeholder="아이디">
+            </div>
+            <div class="inputGroup">
+                <label for="pw_name">이름</label>
+                <input type="text" id="pw_name" placeholder="이름">
+            </div>
+            <div class="inputGroup">
+                <label for="pw_phone">전화번호</label>
+                <input type="text" id="pw_phone" placeholder="010-0000-0000">
+            </div>
+
+            <div style="margin: 10px 0; border-top: 1px dashed #ddd;"></div>
+
+            <div class="inputGroup">
+                <label for="new_pw">새 비밀번호</label>
+                <input type="password" id="new_pw" placeholder="새 비밀번호">
+            </div>
+            <div class="inputGroup">
+                <label for="new_pw_confirm">새 비밀번호 확인</label>
+                <input type="password" id="new_pw_confirm" placeholder="새 비밀번호 확인">
+            </div>
+
+            <button type="button" id="btnResetPw" class="submitBtn">비밀번호 변경하기</button>
+        </div>
+
+        <div class="authLinks">
+            <a href="../pages/loginPage.html">로그인</a>
+            <span class="bar">|</span>
+            <a href="../pages/signUpPage.html">회원가입</a>
+        </div>
+    </div>
+</main>
+
+<script src="../scripts/user.js"></script>
+<script src="../scripts/findAccount.js"></script>
+<script src="../scripts/common.js"></script>
+</body>
+</html>

@@ -1,6 +1,6 @@
 const UNIT_PRICE = 10000;
 const BUNDLE_DISCOUNT_UNIT = 1000;
-const COUPON_CODE = "LOVEHEALTH";
+const COUPON_CODE = "X-MAS";
 
 let currentMonths = 0;
 let isCouponApplied = false;
@@ -98,14 +98,32 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 const updatedList = userList.map(user => {
                     if (user.id === currentUser.id) {
+
+                        const today = new Date();
+                        const endDate = new Date(today);
+                        endDate.setMonth(today.getMonth() + currentMonths);
+
+                        const lockerEndDate = new Date(today);
+                        lockerEndDate.setMonth(today.getMonth() + 1);
+
+                        const currentPtCount = user.ptCount || 0;
+
                         return {
                             ...user,
                             membership: {
                                 type: `${currentMonths}개월 이용권`,
                                 price: finalPrice,
                                 method: paymentMethod.value === 'card' ? '카드' : '현금',
-                                startDate: new Date().toISOString(),
-                                endDate: new Date(new Date().setMonth(new Date().getMonth() + currentMonths)).toISOString()
+                                startDate: today.toISOString(),
+                                endDate: endDate.toISOString()
+                            },
+                            ptCount: currentPtCount + 2,
+
+                            locker: user.locker && user.locker.number ? user.locker : {
+                                number: null,
+                                password: null,
+                                startDate: today.toISOString(),
+                                endDate: lockerEndDate.toISOString()
                             }
                         };
                     }
@@ -114,9 +132,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 localStorage.setItem('userList', JSON.stringify(updatedList));
 
-                alert('결제가 정상적으로 완료되었습니다.\n마이페이지로 이동합니다.');
+                alert('결제가 완료되었습니다.\n(혜택: PT 2회 + 사물함 1개월 무료 적용됨)');
 
-                window.location.href = '../pages/myPage.html';
+                window.location.href = 'index.html';
             }
         });
     }

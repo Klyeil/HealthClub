@@ -157,10 +157,3 @@
     transition: background-color 0.2s;
 }
 .registerBtn:hover { background-color: #27ae60; }
-
-@media (max-width: 768px) {
-    .mainContainer { flex-direction: column; }
-    .leftSection, .rightSection { width: 100%; }
-    .stickyBox { position: static; }
-    .lockerGrid { gap: 8px; padding: 15px; }
-}

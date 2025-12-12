@@ -46,7 +46,7 @@
 
                         <div class="contactInner">
                             <div class="contactLeft">
-                                <p class="contactName">K동 헬스장 담당자</p>
+                                <p class="contactName">강건우</p>
                                 <p class="contactEmail">health@sangmyung.ac.kr</p>
                             </div>
 
@@ -130,6 +130,28 @@
             </div>
         </section>
     </main>
+
+    <div id="promoPopup" class="popupOverlay" style="display: none;">
+        <div class="popupContent">
+            <div class="popupBody">
+                <h3 class="popupTitle">🎉 12월 한정 이벤트</h3>
+                <p class="popupDesc">
+                    신규 회원님들을 위한<br>
+                    <strong>20% 특별 할인 쿠폰</strong>을 드립니다.
+                </p>
+                <div class="couponDisplay">
+                    <span>CODE : </span>
+                    <strong class="code">X-MAS</strong>
+                    <button class="copyIcon" onclick="navigator.clipboard.writeText('X-MAS'); alert('쿠폰 코드가 복사되었습니다!');">복사</button>
+                </div>
+                <p class="popupNote">* 결제 페이지에서 쿠폰 코드를 입력해주세요.</p>
+            </div>
+            <div class="popupFooter">
+                <button id="dontShowTodayBtn" class="footerBtn">오늘 하루 보지 않기</button>
+                <button id="closePopupBtn" class="footerBtn">닫기</button>
+            </div>
+        </div>
+    </div>
     <script src="../scripts/user.js"></script>
     <script src="../scripts/common.js"></script>
     <script src="../scripts/index.js"></script>
